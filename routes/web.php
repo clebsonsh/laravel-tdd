@@ -19,12 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/projects', [ProjectController::class, 'index']);
-
-Route::get('/projects/{project}', [ProjectController::class, 'show']);
-
-Route::post('/projects', [ProjectController::class, 'store'])->middleware('auth');
-
+Route::group(['middleware' => 'auth', 'prefix' => 'projects'], function () {
+    Route::get('/', [ProjectController::class, 'index']);
+    Route::post('/', [ProjectController::class, 'store']);
+    Route::get('/{project}', [ProjectController::class, 'show']);
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
