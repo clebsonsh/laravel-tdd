@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'auth', 'prefix' => 'projects'], function () {
     Route::get('/', [ProjectController::class, 'index']);
+    Route::get('/create', [ProjectController::class, 'create']);
     Route::post('/', [ProjectController::class, 'store']);
     Route::get('/{project}', [ProjectController::class, 'show']);
 });

@@ -25,6 +25,11 @@ class ProjectController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('projects.create');
+    }
+
     public function store()
     {
         auth()->user()->projects()->create(request()->validate([
