@@ -7,6 +7,6 @@
             <a href="/projects/create">New Project</a>
         </div>
     </x-slot>
-    <div>{{ $project->description }}</div>
-    <a href="/projects">Go Back</a>
+    <div class="mb-4">{{ $project->description }}</div>
+    <a class="button" href="/projects">Go Back</a>
 </x-app-layout>

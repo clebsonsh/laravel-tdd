@@ -19,8 +19,8 @@
         </div>
 
         <div>
-            <button type="submit">Create Project</button>
-            <a href="/projects">Cancel</a>
+            <button class="button" type="submit">Create Project</button>
+            <a class="button" href="/projects">Cancel</a>
         </div>
     </form>
 </x-app-layout>
