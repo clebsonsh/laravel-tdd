@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <x-app-layout>
     <x-slot name="header">
         <div style="display: flex; align-items: center">

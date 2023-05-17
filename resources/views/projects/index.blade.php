@@ -10,13 +10,17 @@
             <a href="/projects/create">New Project</a>
         </div>
     </x-slot>
-    <ul>
+
+    <div class="flex space-x-4">
         @forelse ($projects as $project)
-            <li>
-                <a href="{{ $project->path() }}">{{ $project->title }}</a>
-            </li>
+            <a href="{{ $project->path() }}" class="w-1/3">
+                <div class="bg-white rounded shadow-default p-5" style="height: 200px;">
+                    <h3 class="font-normal text-xl mb-4">{{ $project->title }}</h3>
+                    <div class="text-gray-500">{{ str($project->description)->limit(140) }}</div>
+                </div>
+            </a>
         @empty
-            <li>No projects yet.</li>
+            <span>No projects yet.</span>
         @endforelse
-    </ul>
+    </div>
 </x-app-layout>
