@@ -19,12 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => 'auth', 'prefix' => 'projects'], function () {
-    Route::get('/', [ProjectController::class, 'index']);
-    Route::get('/create', [ProjectController::class, 'create']);
-    Route::post('/', [ProjectController::class, 'store']);
-    Route::get('/{project}', [ProjectController::class, 'show']);
-});
+Route::resource('projects', ProjectController::class)->except(['edit', 'update', 'delete'])->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

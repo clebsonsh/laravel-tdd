@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Birdboard</title>
-</head>
-
-<body>
-    <h1>Create a Project</h1>
-
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Create a Project') }}
+        </h2>
+    </x-slot>
     <form method="POST" action="/projects">
         @csrf
         <div>
@@ -24,8 +20,7 @@
 
         <div>
             <button type="submit">Create Project</button>
+            <a href="/projects">Cancel</a>
         </div>
     </form>
-</body>
-
-</html>
+</x-app-layout>

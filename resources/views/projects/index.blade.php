@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>Birdboard</title>
-</head>
-
-<body>
-    <h1>Birdboard</h1>
-
+<x-app-layout>
+    <x-slot name="header">
+        <div class="flex items-center">
+            <h2 class="mr-auto font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Birdboard') }}
+            </h2>
+            <a href="/projects/create">New Project</a>
+        </div>
+    </x-slot>
     <ul>
         @forelse ($projects as $project)
             <li>
@@ -17,6 +19,4 @@
             <li>No projects yet.</li>
         @endforelse
     </ul>
-</body>
-
-</html>
+</x-app-layout>
